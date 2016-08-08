@@ -115,20 +115,8 @@ static void swizzleMethod(Class class, SEL destinationSelector, SEL sourceSelect
 }
 
 - (NSString*) getreversedClientId {
-  NSArray* URLTypes = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleURLTypes"];
-
-  if (URLTypes != nil) {
-    for (NSDictionary* dict in URLTypes) {
-      NSString *urlName = [dict objectForKey:@"CFBundleURLName"];
-      if ([urlName isEqualToString:@"REVERSED_CLIENT_ID"]) {
-        NSArray* URLSchemes = [dict objectForKey:@"CFBundleURLSchemes"];
-        if (URLSchemes != nil) {
-          return [URLSchemes objectAtIndex:0];
-        }
-      }
-    }
-  }
-  return nil;
+  
+  return @"694635791432-k34cflv90vbh0sfmb3eqdbms5q5366do.apps.googleusercontent.com";
 }
 
 - (void) logout:(CDVInvokedUrlCommand*)command {
